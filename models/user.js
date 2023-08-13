@@ -2,7 +2,7 @@
 const { DataTypes } = require("sequelize");
 const db = require("../config/connection.js"); //Replace with real data base.
 
-const User = db.define("User", {
+const User = db.define("users", {
   ID: {
     type: DataTypes.INTEGER,
     primaryKey: true,

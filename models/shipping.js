@@ -51,7 +51,7 @@ Shipping.init(
     {
         sequelize,
         freezeTableName: true,
-        modelName: 'category',
+        modelName: 'shippings',
 
     }
 );

@@ -32,9 +32,11 @@ Orderdetail.belongsTo(Product);
 
 //collection table
 Collection.hasMany(Product);
+Product.belongsTo(Collection);
 
 module.exports = {
     Product,
     Subcategory,
     Category,
+    Collection
   };

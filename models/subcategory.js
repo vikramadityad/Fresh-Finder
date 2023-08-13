@@ -12,8 +12,8 @@ Subcategory.init(
             autoIncrement: true,
 
         },
-
-        subcategory_name: {
+ 
+        name: {
             type: DataTypes.STRING(150),
             allowNull: false,
 
@@ -22,7 +22,7 @@ Subcategory.init(
         category_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'category',
+                model: 'categories',
                 key: 'id',
             },
         },
@@ -33,7 +33,7 @@ Subcategory.init(
     {
         sequelize,
         freezeTableName: true,
-        modelName: 'subcategory',
+        modelName: 'subcategories',
 
     }
 );

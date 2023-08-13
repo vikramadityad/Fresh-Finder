@@ -30,7 +30,7 @@ Orderdetail.init(
     {
         sequelize,
         freezeTableName: true,
-        modelName: 'collection',
+        modelName: 'order_details',
 
     }
 );
