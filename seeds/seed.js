@@ -18,13 +18,16 @@ const seedData = async () => {
 
     // example products
     const products = [
-        ["milk", "baxters", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.walmart.com%2Fip%2FGreat-Value-2-Reduced-Fat-Milk-1-gal%2F10450109&psig=AOvVaw0QZ2Z4Q4Z2Z4Q4Z2Z4Q4Z2&ust=1623687228214000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjQ4Z2Z4_ECFQAAAAAdAAAAABAD", 2.99, "dairy"],
-        ["cheese", "happy cow", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.walmart.com%2Fip%2FGreat-Value-2-Reduced-Fat-Milk-1-gal%2F10450109&psig=AOvVaw0QZ2Z4Q4Z2Z4Q4Z2Z4Q4Z2&ust=1623687228214000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjQ4Z2Z4_ECFQAAAAAdAAAAABAD", 3.99, "dairy"],
-        ["yogurt", "astro", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.walmart.com%2Fip%2FGreat-Value-2-Reduced-Fat-Milk-1-gal%2F10450109&psig=AOvVaw0QZ2Z4Q4Z2Z4Q4Z2Z4Q4Z2&ust=1623687228214000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjQ4Z2Z4_ECFQAAAAAdAAAAABAD", 1.99, "dairy"],
-        ["fruits", "kiwi", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.walmart.com%2Fip%2FGreat-Value-2-Reduced-Fat-Milk-1-gal%2F10450109&psig=AOvVaw0QZ2Z4Q4Z2Z4Q4Z2Z4Q4Z2&ust=1623687228214000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjQ4Z2Z4_ECFQAAAAAdAAAAABAD", 2.99, "produce"],
-        ["vegetables", "zuchinni", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.walmart.com%2Fip%2FGreat-Value-2-Reduced-Fat-Milk-1-gal%2F10450109&psig=AOvVaw0QZ2Z4Q4Z2Z4Q4Z2Z4Q4Z2&ust=1623687228214000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjQ4Z2Z4_ECFQAAAAAdAAAAABAD", 3.99, "produce"],
-        ["fish", "carp", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.walmart.com%2Fip%2FGreat-Value-2-Reduced-Fat-Milk-1-gal%2F10450109&psig=AOvVaw0QZ2Z4Q4Z2Z4Q4Z2Z4Q4Z2&ust=1623687228214000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjQ4Z2Z4_ECFQAAAAAdAAAAABAD", 4.99, "seafood"],
-        ["shellfish", "lobster", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.walmart.com%2Fip%2FGreat-Value-2-Reduced-Fat-Milk-1-gal%2F10450109&psig=AOvVaw0QZ2Z4Q4Z2Z4Q4Z2Z4Q4Z2&ust=1623687228214000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjQ4Z2Z4_ECFQAAAAAdAAAAABAD", 5.99, "seafood"]
+        ["milk", "baxters", "https://via.placeholder.com/150", 2.99, "dairy"],
+        ["cheese", "happy cow", "https://via.placeholder.com/150", 3.99, "dairy"],
+        ["yogurt", "astro", "https://via.placeholder.com/150", 1.99, "dairy"],
+        ["fruits", "kiwi", "https://via.placeholder.com/150", 2.99, "produce"],
+        ["fruits", "kiwi", "https://via.placeholder.com/150", 2.79, "produce"],
+        ["fruits", "kiwi", "https://via.placeholder.com/150", 3.99, "produce"],
+        ["fruits", "kiwi", "https://via.placeholder.com/150", 2.79, "produce"],
+        ["vegetables", "zuchinni", "https://via.placeholder.com/150", 3.99, "produce"],
+        ["fish", "carp", "https://via.placeholder.com/150", 4.99, "seafood"],
+        ["shellfish", "lobster", "https://via.placeholder.com/150", 5.99, "seafood"]
     ];
 
     await Promise.all(products.map(async ([subcategory, name, image_url, price, _]) => {

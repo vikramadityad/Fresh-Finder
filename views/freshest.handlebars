@@ -1,0 +1,19 @@
+<div>
+    <h1>Freshest</h1>
+    {{#each freshest}}
+    <h2>Category - {{@key}}</h2>
+    <div class="d-flex justify-content-betweeen flex-wrap">
+        {{#each this}}
+        <div class="card" style="width: 18rem;">
+            <img src={{image_url}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{stock_date}}</p>
+                <p class="card-text">${{price}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+</div>

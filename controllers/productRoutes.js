@@ -13,8 +13,9 @@ const lodash = require('lodash');
 //     }
 // });
 
+
 //filter the last 2 days stock.
-router.get('/freshest', async(req,res) => {
+router.get('/', async(req,res) => {
     const freshestProducts = (await Product.findAll({
         order: [['stock_date', 'DESC']],
         include: {
@@ -30,10 +31,31 @@ router.get('/freshest', async(req,res) => {
     
     // group the filtered stock by category
     const freshest = lodash.groupBy(freshestProducts, (p) => p.subcategory.category.name);
-    res.render('freshest', {freshest})
-})
+    res.render('freshest', {freshest :freshest});
 
+  
+});
 
+// router.get('/freshest/optimize', async(req,res) => {
+//     const freshestProducts = (await Product.findAll({
+//         order: [['stock_date', 'DESC']],
+//         include: {
+//             model: Subcategory,
+//             include: Category
+//         },
+//         where: {
+//             stock_date: {
+//                 [Op.gte]: moment().subtract(2, 'days').toDate()
+//             }
+//         }
+//     })).map((p) => p.get({plain: true}))
+    
+//     // group the filtered stock by category
+//     const freshest = lodash.groupBy(freshestProducts, (p) => p.subcategory.category.name);
+//     console.log(freshest)
+//     res.render('Freshest', {products, categories: freshest});
+  
+// });
 
 
 
