@@ -11,7 +11,7 @@ const seedData = async () => {
     await Promise.all(categories.map(async ([categoryName, subCategories]) => {
         const category = await Category.create({ name: categoryName });
         return Promise.all(subCategories.map( async (subCategoryName) => {
-            await Subcategory.create({ name: subCategoryName, categoryId: category.id });
+            await Subcategory.create({ name: subCategoryName, category_id: category.id });
         }));
     }))
 
@@ -31,7 +31,7 @@ const seedData = async () => {
         // fetch subcategory by name
         const subC = await Subcategory.findOne({where: {name: subcategory}})
         console.log(`${subcategory} - ${name}`,JSON.stringify(subC))
-        return Product.create({name, image_url, price, subCategoryId: subC.id});
+        return Product.create({name, image_url, price, subcategory_id: subC.id});
     }))
 
 }

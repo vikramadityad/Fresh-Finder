@@ -1,28 +1,57 @@
 const router = require('express').Router();
-const Product = require('../models/product');
+const moment = require('moment/moment');
+const { Subcategory, Category, Product } = require('../models');
+const {Op} = require('sequelize');
+const lodash = require('lodash');
 
-router.get('/', async (req, res) => {
-    try {
-        const productData = await Product.findAll();
-        res.status(200).json(productData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+// router.get('/', async (req, res) => {
+//     try {
+//         const productData = await Product.findAll();
+//         res.status(200).json(productData);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
-router.get('/:id', async (req, res) => {
-    try {
-        const productData = await Product.findByPk(req.params.id);
-        //const product = productData.get({ plain: true });
-
-        if (!productData) {
-            res.status(404).json({ message: 'No product found with this id'});
-            return;
+//filter the last 2 days stock.
+router.get('/freshest', async(req,res) => {
+    const freshestProducts = (await Product.findAll({
+        order: [['stock_date', 'DESC']],
+        include: {
+            model: Subcategory,
+            include: Category
+        },
+        where: {
+            stock_date: {
+                [Op.gte]: moment().subtract(2, 'days').toDate()
+            }
         }
-        res.status(200).json(productData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+    })).map((p) => p.get({plain: true}))
+    
+    // group the filtered stock by category
+    const freshest = lodash.groupBy(freshestProducts, (p) => p.subcategory.category.name);
+    res.render('freshest', {freshest})
+})
+
+
+
+
+
+
+// router.get('/:id', async (req, res) => {
+//     try {
+//         const productData = await Product.findByPk(req.params.id);
+//         //const product = productData.get({ plain: true });
+
+//         if (!productData) {
+//             res.status(404).json({ message: 'No product found with this id'});
+//             return;
+//         }
+//         res.status(200).json(productData);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
+
 
 module.exports = router;
