@@ -1,24 +1,25 @@
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-const { DataTypes } = require("sequelize");
-const db = require("../config/connection.js"); //Replace with real data base.
+class User extends Model { }
 
-const User = db.define("User", {
+User.init({
   ID: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  Username: {
+  username: {
     type: DataTypes.STRING(20),
     allowNull: false,
     unique: true,
   },
-  Email: {
+  email: {
     type: DataTypes.STRING(100),
     allowNull: false,
     unique: true,
   },
-  Password: {
+  password: {
     type: DataTypes.STRING(30),
     allowNull: false,
   },
@@ -50,6 +51,12 @@ const User = db.define("User", {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW,
   },
+},
+  {
+    sequelize,
+    freezeTableName: true,
+    modelName: 'users',
+
 });
 
 module.exports = User;

@@ -1,0 +1,28 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    padding: 1em;
+}
+.logo{
+    max-width: 100px;
+}
+.homepage {
+    margin-top: 20px;
+}
+.homepage .carousel-item {
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+.homepage h3 {
+    text-transform: capitalize;
+}
+
+.homepage .card {
+    margin-bottom: 2rem;
+}
+.navbar {
+    border-bottom: 1px solid;
+}

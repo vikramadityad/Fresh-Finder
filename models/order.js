@@ -35,7 +35,7 @@ Order.init(
     
     freezeTableName: true,
     underscored: true,
-    modelName: 'order'
+    modelName: 'orders'
   }
 );
 

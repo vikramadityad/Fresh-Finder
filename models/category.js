@@ -13,7 +13,7 @@ Category.init(
 
         },
 
-        category_name: {
+        name: {
             type: DataTypes.STRING(150),
             allowNull: false,
 
@@ -24,7 +24,7 @@ Category.init(
     {
         sequelize,
         freezeTableName: true,
-        modelName: 'category',
+        modelName: 'categories',
 
     }
 );

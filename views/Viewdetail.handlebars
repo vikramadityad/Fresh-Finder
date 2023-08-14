@@ -1,0 +1,33 @@
+<div>
+    <h1>{{name}}</h1>
+    <h2>{{metric}} {{price}}</h2>
+    <p>{{description}}</p>
+    <img src="{{image_url}}" alt="{{name}}">
+
+    <div class="main-box">
+        <div class="small-box">
+            <i class="reviews-icon">Reviews</i>
+            <p>Reviews</p>
+            <p>{{reviews}}</p>
+        </div>
+
+        <div class="small-box">
+            <i class="days-icon">Days</i>
+            <p>Since Stock</p>
+            <p>{{stock_date}}</p>
+        </div>
+
+        <div class="small-box">
+            <i class="organic-icon">{{#if organic}}Organic{{else}}Non-Organic{{/if}}</i>
+            <p>Organic</p>
+        </div>
+
+        <div class="small-box">
+            <i class="location-icon">Location</i>
+            <p>{{store_name}}</p>
+            <p>{{store_location}}</p>
+        </div>
+    </div>
+
+
+</div>

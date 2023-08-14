@@ -19,18 +19,18 @@ Product.init(
         },
 
         image_url: {
-            type: DataTypes.STRING(150),
+            type: DataTypes.STRING(1024),
             allowNull: false,
         },
 
         description: {
             type: DataTypes.STRING(150),
-            allowNull: false,
+            allowNull: true,
         },
 
         metric: {
             type: DataTypes.STRING(150),
-            allowNull: false,
+            allowNull: true,
         },
 
         price: {
@@ -46,22 +46,28 @@ Product.init(
         stock_date: {
             type: DataTypes.DATE,
             allowNull: false,
+            defaultValue: DataTypes.NOW,
         },
 
         reviews: {
-            type: DataTypes.DECIMAL(2, 2),
-            allowNull: false,
+            type: DataTypes.DECIMAL,
+            allowNull: true,
+        },
+
+        store_name: {
+            type: DataTypes.STRING(150),
+            allowNull: true,
         },
 
         store_location: {
             type: DataTypes.STRING(150),
-            allowNull: false,
+            allowNull: true,
         },
 
         subcategory_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'subcategory',
+                model: 'subcategories',
                 key: 'id',
             },
         },
@@ -70,7 +76,7 @@ Product.init(
     {
         sequelize,
         freezeTableName: true,
-        modelName: 'product',
+        modelName: 'products',
 
     }
 );
