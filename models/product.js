@@ -50,7 +50,12 @@ Product.init(
         },
 
         reviews: {
-            type: DataTypes.DECIMAL(2, 2),
+            type: DataTypes.DECIMAL,
+            allowNull: true,
+        },
+
+        store_name: {
+            type: DataTypes.STRING(150),
             allowNull: true,
         },
 
