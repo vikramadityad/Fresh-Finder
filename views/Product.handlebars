@@ -9,10 +9,44 @@
             <div class="card-body">
                 <h5 class="card-title">{{name}}</h5>
                 <p class="card-text">{{description }}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
             </div>
         </div>
         {{/each}}
     </div>
     {{/each}}
 </div>
+
+ <div class="modal-body">
+
+                <h1>{{name}}</h1>
+                <h2>{{metric}} {{price}}</h2>
+                <p>{{description}}</p>
+                <img src="{{image_url}}" alt="{{name}}">
+
+                    <div class="small-box">
+                    {{!-- <i class="days-icon">Days</i> --}}
+                    <p>Stock Date: {{stock_date}}</p>            
+                  </div>
+
+                  <div class="small-box">
+                    <i class="organic-icon">{{#if organic}}Organic{{else}}Non-Organic{{/if}}</i>
+                  </div>
+
+                  <div class="main-box">
+                  <div class="small-box">
+                    {{!-- <i class="reviews-icon">Reviews</i> --}}
+                    <p>Reviews: {{reviews}}</p>
+                  </div>
+
+                  <div class="small-box">
+                    {{!-- <i class="location-icon">Location</i> --}}
+                    <p>Location: {{store_name}} at {{store_location}}</p>                    
+                  </div>
+
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add to Cart</button>
+              </div>

@@ -5,8 +5,7 @@ class Order extends Model {}
 
 Order.init(
   {
-
-    order_id: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true

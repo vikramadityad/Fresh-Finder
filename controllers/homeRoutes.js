@@ -15,10 +15,9 @@ router.get('/', async (req, res) => {
             return {...c, products: products.filter((p) => p.subcategory.category_id == c.id)}
         })
         // const subCategories = await Subcategory.findAll().map((rec) => rec.get({plain: true}));
-
-        res.render('Home', {products, categories: categoriesWithProducts});
+        res.render('Home', {products, categories: categoriesWithProducts, currentUserEmail: req.currentUser && req.currentUser.Email, isLoggedIn: !!req.currentUser});
     } catch (err) {
-        console.log(err)
+        console.log(err)    
         res.status(500).json(err);
     }
 });

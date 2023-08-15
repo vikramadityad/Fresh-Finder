@@ -31,7 +31,7 @@ router.get('/', async(req,res) => {
     
     // group the filtered stock by category
     const freshest = lodash.groupBy(freshestProducts, (p) => p.subcategory.category.name);
-    res.render('freshest', {freshest :freshest});
+    res.render('freshest', { freshest :freshest});
 
   
 });

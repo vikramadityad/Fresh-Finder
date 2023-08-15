@@ -17,12 +17,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   )
 
-  OrderItem.associate = models => {
-    OrderItem.belongsTo(models.orders, {
+  OrderItem.associate = (orders, products)  => {
+    OrderItem.belongsTo(orders, {
       foreignKey: { name: 'orderId', allowNull: false },
       onDelete: 'cascade'
     })
-    OrderItem.belongsTo(models.products, {
+    OrderItem.belongsTo(products, {
       foreignKey: { name: 'productId', allowNull: false },
       onDelete: 'cascade'
     })
