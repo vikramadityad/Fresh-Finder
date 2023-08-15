@@ -28,6 +28,9 @@ router.get('/', async(req,res) => {
             }
         }
     })).map((p) => p.get({plain: true}))
+    freshestProducts.forEach((p) => {
+        p.stock_date_text = moment(p.stock_date).fromNow()
+    })
     
     // group the filtered stock by category
     const freshest = lodash.groupBy(freshestProducts, (p) => p.subcategory.category.name);
