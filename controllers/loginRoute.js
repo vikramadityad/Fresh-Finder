@@ -31,6 +31,11 @@ router.post('/login', async (req, res) => {
     req.session.save()
     res.redirect('/');
 })
+router.get('/logout', async (req,res) => {
+    req.session.currentUserId = null
+    req.session.save()
+    res.redirect('/')
+})
 router.post('/api/login',(req,res) => {
     const {username, password} = req.body
     console.log(username,password)
