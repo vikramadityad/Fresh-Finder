@@ -39,6 +39,8 @@ router.get('/', async(req,res) => {
   
 });
 
+module.exports = router;
+
 // router.get('/freshest/optimize', async(req,res) => {
 //     const freshestProducts = (await Product.findAll({
 //         order: [['stock_date', 'DESC']],
@@ -78,5 +80,3 @@ router.get('/', async(req,res) => {
 //     }
 // });
 
-
-module.exports = router;
