@@ -85,6 +85,6 @@ Feel free to explore the design and gain insights into the user experience we're
 ## Deployment
 
 
-Repository: https://github.com/hineeraja/Fresh-Finder
+Repository: https://github.com/vikramadityad/Fresh-Finder/tree/main
 
 Live Deployment: https://freshfinder-ee2adcd480d5.herokuapp.com/
