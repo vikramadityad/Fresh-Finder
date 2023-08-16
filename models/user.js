@@ -9,27 +9,27 @@ User.init({
     primaryKey: true,
     autoIncrement: true,
   },
-  username: {
-    type: DataTypes.STRING(20),
-    allowNull: false,
-    unique: true,
-  },
-  email: {
+  Username: {
     type: DataTypes.STRING(100),
-    allowNull: false,
+    allowNull: true,
+  },
+  Email: {
+    type: DataTypes.STRING(100),
+    allowNull: true
+    ,
     unique: true,
   },
-  password: {
-    type: DataTypes.STRING(30),
-    allowNull: false,
+  Password: {
+    type: DataTypes.STRING(100),
+    allowNull: true,
   },
   Address: {
     type: DataTypes.STRING(100),
-    allowNull: false,
+    allowNull: true,
   },
   FirstName: {
     type: DataTypes.STRING(200),
-    allowNull: false,
+    allowNull: true,
   },
   LastName: {
     type: DataTypes.STRING(50),
@@ -37,20 +37,15 @@ User.init({
   },
   City: {
     type: DataTypes.STRING(100),
-    allowNull: false,
+    allowNull: true,
   },
   Province: {
     type: DataTypes.STRING(50),
-    allowNull: false,
+    allowNull: true,
   },
   EmailVerified: {
     type: DataTypes.BOOLEAN,
-    defaultValue: false,
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW,
-  },
+  }
 },
   {
     sequelize,

@@ -28,13 +28,18 @@ router.get('/', async(req,res) => {
             }
         }
     })).map((p) => p.get({plain: true}))
+    freshestProducts.forEach((p) => {
+        p.stock_date_text = moment(p.stock_date).fromNow()
+    })
     
     // group the filtered stock by category
     const freshest = lodash.groupBy(freshestProducts, (p) => p.subcategory.category.name);
-    res.render('freshest', {freshest :freshest});
+    res.render('freshest', { freshest :freshest});
 
   
 });
+
+module.exports = router;
 
 // router.get('/freshest/optimize', async(req,res) => {
 //     const freshestProducts = (await Product.findAll({
@@ -75,5 +80,3 @@ router.get('/', async(req,res) => {
 //     }
 // });
 
-
-module.exports = router;

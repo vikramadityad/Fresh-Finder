@@ -25,6 +25,11 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<a href="/freshest">
+<button type="button" class="btn btn-primary btn-lg btn-block fresh-btn"> Find the Fresh Stock Items</button>
+</a>
+
   {{#each categories as |category|}}
   <h3> {{category.name}}</h3>
   <div class="d-flex justify-content-around flex-wrap">
@@ -35,13 +40,13 @@
         <h5 class="card-title">{{name}}</h5>
         <p class="card-text">{{description }}</p>
         <a type="button" href="#" class="btn btn-primary js-open-btn" data-toggle="modal"
-          data-target="#exampleModal{{id}}">Go somewhere</a>
+          data-target="#exampleModal{{id}}">Details</a>
         <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Product Info</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -53,35 +58,31 @@
                 <p>{{description}}</p>
                 <img src="{{image_url}}" alt="{{name}}">
 
-                <div class="main-box">
-                  <div class="small-box">
-                    <i class="reviews-icon">Reviews</i>
-                    <p>Reviews</p>
-                    <p>{{reviews}}</p>
-                  </div>
-
-                  <div class="small-box">
-                    <i class="days-icon">Days</i>
-                    <p>Since Stock</p>
-                    <p>{{stock_date}}</p>
+                    <div class="small-box">
+                    {{!-- <i class="days-icon">Days</i> --}}
+                    <p>Stock Date: {{stock_date_text}}</p>            
                   </div>
 
                   <div class="small-box">
                     <i class="organic-icon">{{#if organic}}Organic{{else}}Non-Organic{{/if}}</i>
-                    <p>Organic</p>
+                  </div>
+
+                  <div class="main-box">
+                  <div class="small-box">
+                    {{!-- <i class="reviews-icon">Reviews</i> --}}
+                    <p>Reviews: {{reviews}}</p>
                   </div>
 
                   <div class="small-box">
-                    <i class="location-icon">Location</i>
-                    <p>{{store_name}}</p>
-                    <p>{{store_location}}</p>
+                    {{!-- <i class="location-icon">Location</i> --}}
+                    <p>Location: {{store_name}} at {{store_location}}</p>                    
                   </div>
 
                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">Add to Cart</button>
               </div>
             </div>
           </div>
