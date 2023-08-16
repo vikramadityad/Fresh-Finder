@@ -88,3 +88,10 @@ Feel free to explore the design and gain insights into the user experience we're
 Repository: https://github.com/vikramadityad/Fresh-Finder/tree/main
 
 Live Deployment: https://freshfinder-ee2adcd480d5.herokuapp.com/
+
+## Screenshorts
+<img width="1316" alt="Screenshot 2023-08-15 at 10 45 58 PM" src="https://github.com/vikramadityad/Fresh-Finder/assets/28673859/8a6d8135-9381-4339-b774-fb1d772f12f3">
+<img width="1308" alt="Screenshot 2023-08-15 at 10 47 26 PM" src="https://github.com/vikramadityad/Fresh-Finder/assets/28673859/72898215-0cf7-4d4a-b37f-20de8da85d5d">
+<img width="1319" alt="Screenshot 2023-08-15 at 10 47 41 PM" src="https://github.com/vikramadityad/Fresh-Finder/assets/28673859/3bde6586-ddd9-4c2f-ac85-c1e51b523b26">
+<img width="1308" alt="Screenshot 2023-08-15 at 10 47 26 PM" src="https://github.com/vikramadityad/Fresh-Finder/assets/28673859/7424c27c-a13e-4f50-b46a-cd0438ca90ad">
+
